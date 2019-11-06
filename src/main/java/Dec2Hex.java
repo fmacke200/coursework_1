@@ -7,12 +7,6 @@ class Dec2Hex
 
     public static void main(String args[])
     {
-        String hexadecimal = dec2Hex(args);
-        System.out.println("Hexadecimal representation is : " + hexadecimal);
-
-    }
-
-    public static String dec2Hex(String args[]){
         if (args.length > 0)
         {
             try
@@ -25,7 +19,13 @@ class Dec2Hex
                 System.exit(1);
             }
         }
+        String hexadecimal = dec2Hex(Arg1);
+        System.out.println("Hexadecimal representation is : " + hexadecimal);
 
+    }
+
+    public static String dec2Hex(int arg){
+        Arg1 = arg;
         char ch[]={'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
         int rem, num;
         num = Arg1;
