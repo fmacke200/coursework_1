@@ -18,9 +18,13 @@ class Dec2Hex
                 System.err.println("Argument" + args[0] + " must be an integer.");
                 System.exit(1);
             }
+            String hexadecimal = dec2Hex(Arg1);
+            System.out.println("Hexadecimal representation is : " + hexadecimal);
+        } else {
+            System.err.println("An integer argument must be provided.");
+            System.exit(1);
         }
-        String hexadecimal = dec2Hex(Arg1);
-        System.out.println("Hexadecimal representation is : " + hexadecimal);
+
 
     }
 
