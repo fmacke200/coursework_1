@@ -1,4 +1,4 @@
-package dec2hex;
+package org.dec2hex;
 
 import static org.junit.Assert.*;
 
