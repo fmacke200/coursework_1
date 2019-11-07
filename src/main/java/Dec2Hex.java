@@ -1,11 +1,9 @@
-import java.util.Scanner;
-
 class Dec2Hex
 {
 
-    public static int Arg1;
+    private static int Arg1;
 
-    public static void main(String args[])
+    public static void main(String[] args)
     {
         if (args.length > 0)
         {
@@ -28,21 +26,21 @@ class Dec2Hex
 
     }
 
-    public static String dec2Hex(int arg){
+    private static String dec2Hex(int arg){
         Arg1 = arg;
-        char ch[]={'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
+        char[] ch ={'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
         int rem, num;
         num = Arg1;
-        String hexadecimal="";
+        StringBuilder hexadecimal= new StringBuilder();
         System.out.println("Converting the Decimal Value " + num + " to Hex...");
 
         while(num != 0)
         {
             rem=num%16;
-            hexadecimal= ch[rem] + hexadecimal;
+            hexadecimal.insert(0, ch[rem]);
             num= num/16;
         }
 
-        return hexadecimal;
+        return hexadecimal.toString();
     }
 }
