@@ -1,3 +1,5 @@
+package Dec2Hex;
+
 import static org.junit.Assert.*;
 
 public class Dec2HexTest {

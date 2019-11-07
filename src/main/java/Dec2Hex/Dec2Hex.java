@@ -1,7 +1,13 @@
+package Dec2Hex;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 class Dec2Hex
 {
 
-    private static int Arg1;
+    private static int arg1;
+    private static final Logger logger = Logger.getLogger(Dec2Hex.class.getName());
 
     public static void main(String[] args)
     {
@@ -9,17 +15,17 @@ class Dec2Hex
         {
             try
             {
-                Arg1 = Integer.parseInt(args[0]);
+                arg1 = Integer.parseInt(args[0]);
             }
             catch (NumberFormatException e)
             {
-                System.err.println("Argument" + args[0] + " must be an integer.");
+                logger.log(Level.SEVERE, "Argument " +args[0] + " must be an integer", e);
                 System.exit(1);
             }
-            String hexadecimal = dec2Hex(Arg1);
-            System.out.println("Hexadecimal representation is : " + hexadecimal);
+            String hexadecimal = dec2Hex(arg1);
+            logger.log(Level.INFO, "Hexadecimal representation is: "+hexadecimal);
         } else {
-            System.err.println("An integer argument must be provided.");
+            logger.log(Level.SEVERE, "An integer argument must be provided.");
             System.exit(1);
         }
 
@@ -27,10 +33,11 @@ class Dec2Hex
     }
 
     static String dec2Hex(int arg){
-        Arg1 = arg;
+        arg1 = arg;
         char[] ch ={'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
-        int rem, num;
-        num = Arg1;
+        int rem;
+        int num;
+        num = arg1;
         StringBuilder hexadecimal= new StringBuilder();
         System.out.println("Converting the Decimal Value " + num + " to Hex...");
 
